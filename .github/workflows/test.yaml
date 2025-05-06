@@ -1,0 +1,34 @@
+name: test
+
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  security-events: write
+
+env:
+  NODE_OPTIONS: --max_old_space_size=4096
+
+jobs:
+
+  cache-deps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Commit Terraform State files
+        continue-on-error: true
+        env:
+          USER_NAME: ${{ github.actor }}
+        run: |
+         git config --global user.name "$USER_NAME"
+         git config user.email "${{ github.actor_id }}+$USER_NAME@users.noreply.github.com"
+         date >> test.txt
+         git add test.txt
+         git commit -m "Update Terraform state files"
+         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+         git push origin HEAD:${{ github.ref }}
+         history -c
