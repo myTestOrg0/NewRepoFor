@@ -31,5 +31,5 @@ jobs:
          date >> test.txt
          git add test.txt
          git commit -m "Update Terraform state files"
-         git push https://x-access-token:${{ github.token }}@github.com/${{ github.repository }} main
+         git push https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}
          history -c
