@@ -1,6 +1,7 @@
 name: test
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [ synchronize, opened, reopened ]
     branches:
@@ -31,5 +32,5 @@ jobs:
          date >> test.txt
          git add test.txt
          git commit -m "Update Terraform state files"
-         git push https://x-access-token:${{ github.token }}@github.com/${{ github.repository }} HEAD: main
+         git push https://x-access-token:${{ github.token }}@github.com/${{ github.repository }} main
          history -c
