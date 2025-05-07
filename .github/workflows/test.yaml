@@ -26,6 +26,7 @@ jobs:
         env:
           USER_NAME: ${{ github.actor }}
         run: |
+         git fetch origin main && git checkout main
          git config --global user.name "$USER_NAME"
          git config user.email "${{ github.actor_id }}+$USER_NAME@users.noreply.github.com"
          date >> test.txt
