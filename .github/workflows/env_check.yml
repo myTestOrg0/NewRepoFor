@@ -1,4 +1,4 @@
-name: Manual: Print Environment Variable Names
+name: env_check
 
 on:
   workflow_dispatch:
