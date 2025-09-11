@@ -9,7 +9,7 @@ on:
     branches: [ main ]
 jobs:
   run_check:
-    name: Start run_check
+    name: Start run_check1
     runs-on: ubuntu-latest
     steps:
     - name: Run dummy test
