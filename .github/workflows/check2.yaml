@@ -16,3 +16,7 @@ jobs:
       run: |
         echo "Running check..."
         exit 1
+    - name: validate
+      uses: myTestOrg0/tf-github-workflows/.github/workflows/tf-validate.yaml@main
+      with:
+        working-directory: . 
