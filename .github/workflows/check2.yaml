@@ -10,13 +10,6 @@ on:
 jobs:
   run_check:
     name: check2.run_check
-    runs-on: ubuntu-latest
-    steps:
-    - name: Run dummy test
-      run: |
-        echo "Running check..."
-        exit 1
-    - name: validate
-      uses: myTestOrg0/tf-github-workflows/.github/workflows/tf-validate.yaml@main
-      with:
-        working-directory: . 
+    uses: myTestOrg0/tf-github-workflows/.github/workflows/tf-validate.yaml@main
+    with:
+      working-directory: . 
