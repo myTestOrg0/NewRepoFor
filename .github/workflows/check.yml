@@ -10,7 +10,7 @@ on:
 
 jobs:
   run_check:
-    name: not_run_check
+    #name: not_run_check
     runs-on: ubuntu-latest
     steps:
     - name: Run dummy test
