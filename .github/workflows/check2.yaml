@@ -1,8 +1,12 @@
 name: check2
 
 on:
-  release:
-    types: [released]
+  pull_request:
+    types: [ synchronize, opened, reopened ]
+    branches:
+      - gh-pages
+  push:
+    branches: [ main ]
 jobs:
   run_check:
     name: Start run_check
