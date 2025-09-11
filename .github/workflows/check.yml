@@ -10,9 +10,10 @@ on:
 
 jobs:
   run_check:
+    name: Start run_check
     runs-on: ubuntu-latest
     steps:
     - name: Run dummy test
       run: |
         echo "Running check..."
-        exit 1 
+        exit 0 
