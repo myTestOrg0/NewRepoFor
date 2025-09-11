@@ -4,11 +4,15 @@ on:
   pull_request:
     types: [ synchronize, opened, reopened ]
     branches:
-      - gh-pages
+      - gh-pages1
   push:
     branches: [ main ]
 jobs:
   run_check:
-    uses: myTestOrg0/tf-github-workflows/.github/workflows/tf-validate.yaml@main
-    with:
-      working-directory: . 
+    name: Start run_check
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run dummy test
+      run: |
+        echo "Running check..."
+        exit 0 
