@@ -1,13 +1,8 @@
 name: check2
 
 on:
-  pull_request:
-    types: [ synchronize, opened, reopened ]
-    branches:
-      - gh-pages
-  push:
-    branches: [ main ]
-
+  release:
+    types: [released]
 jobs:
   run_check:
     runs-on: ubuntu-latest
