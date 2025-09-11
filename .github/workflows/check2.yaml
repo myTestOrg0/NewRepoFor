@@ -9,7 +9,6 @@ on:
     branches: [ main ]
 jobs:
   run_check:
-    name: check2.run_check
     uses: myTestOrg0/tf-github-workflows/.github/workflows/tf-validate.yaml@main
     with:
       working-directory: . 
