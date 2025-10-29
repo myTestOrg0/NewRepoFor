@@ -13,24 +13,3 @@ env:
   NODE_OPTIONS: --max_old_space_size=4096
 
 jobs:
-
-  cache-deps:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-
-      - name: Push test file
-        env:
-          USER_NAME: ${{ github.actor }}
-        run: |
-         git fetch origin main && git checkout main
-         git config --global user.name "$USER_NAME"
-         git config user.email "${{ github.actor_id }}+$USER_NAME@users.noreply.github.com"
-         date >> test.txt
-         git add test.txt
-         git commit -m "Update Terraform state files"
-         git push https://x-access-token:${{ github.token }}@github.com/${{ github.repository }} main
-         history -c
