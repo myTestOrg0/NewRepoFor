@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [ synchronize, opened, reopened ]
     branches:
-      - gh-pages
+      - main
   push:
     branches: [ main ]
 
@@ -15,4 +15,4 @@ jobs:
     - name: Run dummy test
       run: |
         echo "Running check..."
-        exit 0 
+        exit 1 
