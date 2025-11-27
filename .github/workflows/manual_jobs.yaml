@@ -7,6 +7,8 @@ jobs:
   job1:
     name: Job 1
     runs-on: ubuntu-latest
+    environment:
+      name: job1
     steps:
       - name: Print JOB1
         run: echo "JOB1"
@@ -14,6 +16,8 @@ jobs:
   job2:
     name: Job 2
     runs-on: ubuntu-latest
+    environment:
+      name: job2
     steps:
       - name: Print JOB2
         run: echo "JOB2"
