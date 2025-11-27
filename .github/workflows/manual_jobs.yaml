@@ -2,6 +2,8 @@ name: Manual Two Jobs
 
 on:
   workflow_dispatch:
+  issues:
+    types: [opened]
 
 jobs:
   job1:
