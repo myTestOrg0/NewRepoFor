@@ -1,4 +1,4 @@
-name: test
+name: test npm
 
 on:
   pull_request:
