@@ -3,6 +3,9 @@ name: Deploy static content to Pages
 
 on:
   workflow_dispatch: 
+   
+  push:
+    branches: [gh-pages]
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
