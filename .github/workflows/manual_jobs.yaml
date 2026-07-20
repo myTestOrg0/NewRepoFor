@@ -14,8 +14,10 @@ jobs:
       - name: Print JOB1
         run: echo "JOB1"
       - name: Run tests 
+        env:
+          ENV_FILE: ${{ vars.ENV_FILE }}
         run: | 
-          echo "${{ vars.ENV_FILE }}" > .env
+          echo $ENV_FILE > .env
 
   job2:
     name: Job 2
