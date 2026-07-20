@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Print JOB1
         run: echo "JOB1"
+      - name: Run tests 
+        run: | 
+          echo "${{ vars.ENV_FILE }}" > .env
 
   job2:
     name: Job 2
